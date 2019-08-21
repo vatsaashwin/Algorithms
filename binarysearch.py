@@ -22,3 +22,4 @@ print("The position of the element is: ", binarySearch(arr, f, 0, len(arr)-1))
 
 
 
+
