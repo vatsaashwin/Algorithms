@@ -21,33 +21,29 @@ class Stack():
 
 s= Stack()
 
-a="[(])"
+def balanceChecker(a):
+	for i in range(len(a)-1):
 
-for i in range(len(a)-1):
+		if s.isEmpty():
+			s.push(a[i])
+
+		if (s.peek()== '(' and a[i+1]== ')'):
+			s.pop()
+
+		elif (s.peek()== '[' and a[i+1]== ']'):		
+			s.pop()
+
+		elif (s.peek()== '{' and a[i+1]== '}'):		
+			s.pop()
+
+		else:
+			s.push(a[i])
+
 
 	if s.isEmpty():
-		s.push(a[i])
-
-	if (s.peek()== '(' and a[i+1]== ')'):		
-		print("peeked, equal, poppin")
-		s.pop()
-
-	elif (s.peek()== '[' and a[i+1]== ']'):		
-		print("peeked, equal, poppin")
-		s.pop()
-
-	elif (s.peek()== '{' and a[i+1]== '}'):		
-		print("peeked, equal, poppin")
-		s.pop()
-
+		return print("Balanced")
 	else:
-		print("peeked, unequal, pushin")
-		s.push(a[i])
+		return print("Not Balanced")
 
-
-if s.isEmpty():
-	print("Balanced")
-else:
-	print("Not Balanced")
-
-
+a= "(()[{()((()[))]()}()}"
+balanceChecker(a)
