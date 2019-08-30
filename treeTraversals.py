@@ -59,7 +59,8 @@ r.insertLeft(2)
 r.insertRight(3)
 r.leftChild.insertLeft(4)
 r.leftChild.insertRight(5)
-print("inorder...",inorder(r))
+
+print("inorder...", inorder(r))
 print("preorder...",preorder(r))
 print("postorder...", postorder(r))
 
