@@ -1,4 +1,5 @@
 import time
+import numpy as np
 
 def mergeSort(arr):
 
@@ -57,8 +58,11 @@ def partition(arr, start, end):
 
     arr[i+1], arr[end] = arr[end], arr[i+1]
     return i+1
-  
 
+
+for i in range(0, 100000):
+    randnums = np.random.randint(1, 101, 5)
+    
 
 arr= [5,4,2,8,9,5,2,1]
 print(mergeSort(arr))
