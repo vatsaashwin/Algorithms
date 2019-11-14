@@ -36,9 +36,6 @@ def MST_Kruskel(Graph):
 		rx = find(parent, x)
 		ry = find(parent, y)
 
-		# if rx == ry:
-		# 	return
-
 		if rx != ry:	
 			parent[rx] = ry
 			dist = dist + wt
@@ -98,23 +95,22 @@ def MST_Prim(Graph):
             wt = wt + cost[u]
     return wt, output
 
-G =  [(0, 1, 2), (0, 3, 6), (1, 2, 3), (1, 3, 8), (1, 4, 5), (2, 4, 7), (3, 4, 9)]
+# G =  [(0, 1, 2), (0, 3, 6), (1, 2, 3), (1, 3, 8), (1, 4, 5), (2, 4, 7), (3, 4, 9)]
 
-print(MST_Kruskel(G))
-print(MST_Prim(G))
+# print(MST_Kruskel(G))
+# print(MST_Prim(G))
 
+#######GENERATE GRAPH###############
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 t = [315745,140359,49370,19607,4994]
+# t= [4994, 19607, 49370, 140359, 315745]
 plt.xticks(t)
-# t = [4994,19607,49370,140359,315745]
 #time(in secs) from server
-MST_prim = [0.441,0.435,0.495,0.116,0.202]
-# MST_prim = [0.202, 0.116, 0.495,0.435,0.441]
-MST_kruskel = [1.538,2.547,3.977,0.963,1.419]
-# MST_kruskel = [1.419, 0.963, 3.977, 2.547, 1.538]
+MST_kruskel = [0.441,0.435,0.495,0.116,0.202]
+MST_prim = [1.538,2.547,3.977,0.963,1.419]
 
 g1, = plt.plot(t, MST_prim, label="MST_Prim",  marker='o')
 g2, = plt.plot(t, MST_kruskel, label="MST_Kruskel",  marker='o')
@@ -123,3 +119,5 @@ plt.legend()
 plt.xlabel('Number of Edges')
 plt.ylabel('Running Time (sec)')
 plt.show()
+
+
